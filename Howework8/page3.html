@@ -1,0 +1,80 @@
+<html>
+    <head>
+       <title>Contact Us</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+            </head>
+        <script>
+            function Checkname() {
+                var name = document.getElementById("Name").value;
+
+                if (name == "") {
+                    window.alert("Please enter your name.");
+                    document.getElementById("Name").style.backgroundColor = "red";
+                    document.getElementById("Name").focus();
+                    return false;
+                }
+                return true;
+
+            }
+
+                function CheckEmail() {
+                    var email = document.getElementById("Email").value;
+    
+                    if (email == "") {
+                        window.alert("Please enter your email.");
+                        document.getElementById("Email").style.backgroundColor = "red";
+                        return false;
+                    }
+                    return true;
+    
+                }
+            function checkTerms() {
+                var terms = document.querySelector('select').value;
+                if (terms != "Yes") {
+                    window.alert("You must accept the terms of agreement to proceed.");
+                    return false;
+                }
+                return true;
+            }
+                function CheckForm() {
+                    if (Checkname() && CheckEmail() && checkTerms() == true) {
+                        window.alert("Form submitted successfully!");
+                        return true;
+                    }
+                    return false;
+                }
+        
+
+        </script>
+    </head>
+    <body style="background-color: lightgray;">
+       
+        <span><h1>Contact Us</h1></span>
+
+        <form action="nextPage.html" type="Post">
+            Name: <input type="text" id="Name"><br>
+            Email: <input type="text" id="Email"><br>
+
+        <span><h3> Accept Terms of Agreement </h3></span>
+        <ul>
+            <li>owe me your soul</li>
+            <li>owe me all your time i would want </li>
+            <li>own me all your matral posestions </li>
+            <li> own me your first born kitten </li>
+        </ul>
+        <select>
+      <option value="">Select an option</option>
+      <option value="Yes">Yes</option>
+      <option value="Yes">yes</option>
+      <option value="Yes">YES</option>
+      <option value="No">I guess No</option>
+        </select>
+
+        <button id="mySubmit" type="button" onclick="Checkname(),CheckEmail(),checkTerms(),CheckForm()">Submit</button>
+
+        <p><a href="page1.html">Home Page</a></p>
+        <p><a href="page2.html">Go to the Short Story</a></p>
+    </body>
+</htmL>

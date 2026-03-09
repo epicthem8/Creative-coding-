@@ -1,0 +1,17 @@
+body{
+    background-color: gray;
+    background-image: url('https://w0.peakpx.com/wallpaper/842/972/HD-wallpaper-like-a-boss-little-space.jpg');
+    background-blend-mode:luminosity;
+    color: white;
+    font-style: 'roman';
+
+}
+
+
+
+#title
+{
+    font-size: 42px;
+    color:red;
+}
+
