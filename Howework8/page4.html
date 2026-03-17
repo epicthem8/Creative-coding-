@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sunny Morning Portrait</title>
+  <style>
+    html,body{height:100%;margin:0}
+    body{display:flex;align-items:center;justify-content:center;background:#f4f7fb}
+    canvas{border:1px solid #ddd;background:#fff}
+  </style>
+</head>
+<body>
+  <canvas id="portrait" width="800" height="600"></canvas>
+  <script>
+    const canvas = document.getElementById('portrait');
+    const ctx = canvas.getContext('2d');
+
+    // background
+    ctx.fillStyle = '#fbf8ef';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Title (top center)
+    ctx.fillStyle = '#2b2b2b';
+    ctx.font = '28px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('Sunny Morning Portrait', canvas.width / 2, 42);
+
+    // Head (ellipse)
+    ctx.fillStyle = '#f2d2b5';
+    ctx.beginPath();
+    ctx.ellipse(400, 260, 110, 140, 0, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Hair (rectangles / squares)
+    ctx.fillStyle = '#3b2b1f';
+    for (let i = 0; i < 11; i++) {
+      ctx.fillRect(280 + i * 12, 140 - (i % 3) * 6, 16, 90);
+    }
+
+    // Eyes (circles)
+    ctx.fillStyle = '#ffffff';
+    ctx.beginPath(); ctx.arc(360, 240, 18, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.arc(440, 240, 18, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = '#2a2a2a';
+    ctx.beginPath(); ctx.arc(360, 240, 7, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.arc(440, 240, 7, 0, Math.PI * 2); ctx.fill();
+
+    // Eyebrows (lines)
+    ctx.strokeStyle = '#342114'; ctx.lineWidth = 4;
+    ctx.beginPath(); ctx.moveTo(338, 220); ctx.lineTo(382, 214); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(418, 214); ctx.lineTo(462, 220); ctx.stroke();
+
+    // Nose (triangle) - FIRST POINT is bottom-left
+    ctx.fillStyle = '#e6bca0';
+    ctx.beginPath();
+    ctx.moveTo(380, 285); // bottom-left (triangle's first point)
+    ctx.lineTo(420, 285); // bottom-right
+    ctx.lineTo(400, 255); // top
+    ctx.closePath();
+    ctx.fill();
+
+    // Mouth (a simple curved line)
+    ctx.strokeStyle = '#b33'; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(370, 310); ctx.quadraticCurveTo(400, 330, 430, 310); ctx.stroke();
+
+    // Neck (rect)
+    ctx.fillStyle = '#f2d2b5';
+    ctx.fillRect(370, 360, 60, 70);
+
+    // Shirt (a larger rect / square area)
+    ctx.fillStyle = '#2e7d7a';
+    ctx.fillRect(300, 430, 200, 120);
+
+    // Ears drawn as small points (use small filled circles for points)
+    ctx.fillStyle = '#f2d2b5';
+    ctx.beginPath(); ctx.arc(285, 260, 6, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.arc(515, 260, 6, 0, Math.PI * 2); ctx.fill();
+
+    // Decorative line across bottom
+    ctx.strokeStyle = '#ffd166'; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(80, 520); ctx.lineTo(720, 520); ctx.stroke();
+
+    // Small triangle accessory (FIRST POINT bottom-left)
+    ctx.fillStyle = '#ffd166';
+    ctx.beginPath();
+    ctx.moveTo(320, 500); // bottom-left
+    ctx.lineTo(380, 500); // bottom-right
+    ctx.lineTo(350, 450); // top
+    ctx.closePath();
+    ctx.fill();
+
+    // Signature (bottom-right) - replace 'Your Name' with your name
+    ctx.fillStyle = '#222';
+    ctx.font = '18px serif';
+    ctx.textAlign = 'right';
+    ctx.fillText('By: Your Name', canvas.width - 20, canvas.height - 20);
+  </script>
+</body>
+</html>
