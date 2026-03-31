@@ -52,10 +52,6 @@ function draw() {
   triangle(140, 130, 180, 130, 160, 90);
   triangle(220, 130, 260, 130, 240, 90);
 
-  // hat
-  strokeWeight(3);
-  point(50, 350);
-  point(350, 350);
 
   // Signature
   noStroke();
