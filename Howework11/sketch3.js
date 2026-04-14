@@ -31,8 +31,8 @@ function setup() {
             y: random(height),
             size: random(20, 60),
             color: color(random(255), random(255), random(255)),
-            speedX: random(1, 4),
-            speedY: random(1, 4)
+            speedX: random(1, 6),
+            speedY: random(1, 6)
         });
     }
 }
@@ -71,7 +71,7 @@ function draw() {
         o.x += o.speedX;
         o.y += o.speedY;
 
-        // Wrap around screen (logical operators used)
+        // Wrap around screen 
         if (o.x > width) {
             o.x = 0;
         } else if (o.x < 0) {
@@ -89,7 +89,7 @@ function draw() {
     fill(255, 0, 0);
     rect(mouseShapeX, mouseShapeY, 40, 40);
 
-    // Win condition (uses logical operator &&)
+    // Win condition 
     if (
         characterX > exitX &&
         characterX < exitX + exitWidth &&
